@@ -1,4 +1,4 @@
-import * as THREE from "https://unpkg.com/three@0.139.0/build/three.module.js";
+import * as THREE from "three";
 import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
@@ -142,7 +142,7 @@ const cubeMat = new THREE.MeshBasicMaterial({
 const cubeMesh = new THREE.Mesh(cubeGeo, cubeMat);
 //set cube side texts to cube faces
 pages.map((page) =>
-  loader.load("/Inter_Regular.json", (font) => {
+  loader.load("/inter_regular.json", (font) => {
     const pageGeo = new TextGeometry(page.title, { ...page.textProps, font });
     const pageMat = new THREE.MeshBasicMaterial({ ...page.meshProps });
     const mesh = new THREE.Mesh(pageGeo, pageMat);
