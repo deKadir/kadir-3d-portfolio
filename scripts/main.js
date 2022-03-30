@@ -141,8 +141,8 @@ const cubeMat = new THREE.MeshBasicMaterial({
 });
 const cubeMesh = new THREE.Mesh(cubeGeo, cubeMat);
 //set cube side texts to cube faces
-pages.map((page) =>
-  loader.load("../assets/fonts/inter_regular.json", (font) => {
+pages.map((page) => {
+  loader.load("../assets/fonts/inter_regular.typeface.json", (font) => {
     const pageGeo = new TextGeometry(page.title, { ...page.textProps, font });
     const pageMat = new THREE.MeshBasicMaterial({ ...page.meshProps });
     const mesh = new THREE.Mesh(pageGeo, pageMat);
@@ -152,8 +152,8 @@ pages.map((page) =>
     mesh.rotation.y = page.rotation.y;
     mesh.rotation.z = page.rotation.z;
     cubeMesh.add(mesh);
-  })
-);
+  });
+});
 
 //handle rotating
 const controls = new OrbitControls(camera, renderer.domElement);
