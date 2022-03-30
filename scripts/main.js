@@ -8,7 +8,7 @@ const fontUrl = new URL(
   import.meta.url
 );
 //constants
-const BOX_SIZE = 28;
+const BOX_SIZE = 30;
 const ROTATE_CONSTANT = 1.575;
 const TEXT_COLOR = 0xffa97a;
 const BOX_COLOR = 0x182228;
@@ -168,6 +168,8 @@ controls.dampingFactor = 0.05;
 
 controls.screenSpacePanning = false;
 
+controls.maxPolarAngle = Math.PI / 2;
+controls.maxZoom = 1;
 scene.add(cubeMesh);
 //animation
 function animate() {
