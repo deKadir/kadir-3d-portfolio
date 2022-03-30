@@ -2,7 +2,7 @@ import * as THREE from "three";
 import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-//due to vite
+//due to vite limitations
 const fontUrl = new URL(
   "../assets/fonts/inter_regular.typeface.json",
   import.meta.url
@@ -165,7 +165,8 @@ const controls = new OrbitControls(camera, renderer.domElement);
 controls.listenToKeyEvents(window);
 controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
 controls.dampingFactor = 0.05;
-
+controls.minDistance = 55;
+controls.maxDistance = 90;
 controls.screenSpacePanning = false;
 
 controls.maxPolarAngle = Math.PI / 2;
@@ -174,6 +175,7 @@ scene.add(cubeMesh);
 function animate() {
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
+  camera.position.y = cubeMesh.position.y;
   controls.update();
 }
 document.body.appendChild(renderer.domElement);
