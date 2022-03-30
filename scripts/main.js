@@ -169,7 +169,7 @@ controls.dampingFactor = 0.05;
 controls.screenSpacePanning = false;
 
 controls.maxPolarAngle = Math.PI / 2;
-controls.maxZoom = 1;
+controls.maxDistance = 1;
 scene.add(cubeMesh);
 //animation
 function animate() {
