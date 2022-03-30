@@ -2,7 +2,11 @@ import * as THREE from "three";
 import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-
+//due to vite limitations we need to define static urls like this
+const fontUrl = new URL(
+  "../assets/fonts/inter_regular.typeface.json",
+  import.meta.url
+);
 //constants
 const BOX_SIZE = 30;
 const ROTATE_CONSTANT = 1.575;
@@ -141,8 +145,9 @@ const cubeMat = new THREE.MeshBasicMaterial({
 });
 const cubeMesh = new THREE.Mesh(cubeGeo, cubeMat);
 //set cube side texts to cube faces
+
 pages.map((page) => {
-  loader.load("../assets/fonts/inter_regular.typeface.json", (font) => {
+  loader.load(fontUrl, (font) => {
     const pageGeo = new TextGeometry(page.title, { ...page.textProps, font });
     const pageMat = new THREE.MeshBasicMaterial({ ...page.meshProps });
     const mesh = new THREE.Mesh(pageGeo, pageMat);
