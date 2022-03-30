@@ -2,7 +2,7 @@ import * as THREE from "three";
 import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-//due to vite limitations we need to define static urls like this
+//due to vite
 const fontUrl = new URL(
   "../assets/fonts/inter_regular.typeface.json",
   import.meta.url
@@ -169,8 +169,6 @@ controls.dampingFactor = 0.05;
 controls.screenSpacePanning = false;
 
 controls.maxPolarAngle = Math.PI / 2;
-controls.minDistance = 55;
-controls.maxDistance = 90;
 scene.add(cubeMesh);
 //animation
 function animate() {
