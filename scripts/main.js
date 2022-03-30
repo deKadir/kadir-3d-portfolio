@@ -175,7 +175,7 @@ scene.add(cubeMesh);
 function animate() {
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
-  camera.position.y = cubeMesh.position.y;
+
   controls.update();
 }
 document.body.appendChild(renderer.domElement);
