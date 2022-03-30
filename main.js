@@ -142,7 +142,7 @@ const cubeMat = new THREE.MeshBasicMaterial({
 const cubeMesh = new THREE.Mesh(cubeGeo, cubeMat);
 //set cube side texts to cube faces
 pages.map((page) =>
-  loader.load("Inter_Regular.json", (font) => {
+  loader.load("/Inter_Regular.json", (font) => {
     const pageGeo = new TextGeometry(page.title, { ...page.textProps, font });
     const pageMat = new THREE.MeshBasicMaterial({ ...page.meshProps });
     const mesh = new THREE.Mesh(pageGeo, pageMat);
